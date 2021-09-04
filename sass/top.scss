@@ -1,0 +1,449 @@
+$mainSection--detailColor: #fff8e3;
+$mainSection--detailEvenColor: #f1ebd7;
+$mainSection--textColor: #70533b;
+$moreButton--textColor: #ffffff;
+$moreButton--backgroundColor: #a58b76;
+$moreButton--boxshadowColor: #463325;
+
+$pc: 1180px;
+$tb: 1179px;
+$sp: 767px;
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media (max-width: ($tb)) and (min-width: 766px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.l-main {
+  width: 100%;
+  overflow: hidden;
+}
+
+.p-main__section {
+  width: 100%;
+  @include pc {
+    display: flex;
+  }
+  @include tb {
+    display: flex;
+  }
+  @include sp {
+    display: block;
+    height: auto;
+    padding: 20px;
+    background-color: $mainSection--detailColor;
+  }
+}
+
+.p-main__section--even {
+  width: 100%;
+  @include pc {
+    display: flex;
+  }
+  @include tb {
+    display: flex;
+  }
+  @include sp {
+    display: block;
+    height: auto;
+    padding: 20px;
+    background-color: $mainSection--detailEvenColor;
+  }
+}
+
+.p-main__section--aboutImageSection,
+.p-main__section--drinkImageSection,
+.p-main__section--foodImageSection,
+.p-main__section--accessImageSection,
+.p-main__section--newsImageSection {
+  @include pc {
+    width: 50%;
+    position: relative;
+  }
+  @include tb {
+    width: 50%;
+    position: relative;
+  }
+  @include sp {
+    position: relative;
+    width: 100%;
+    height: 320px;
+  }
+}
+
+.p-main__section--aboutImageItem,
+.p-main__section--drinkImageItem,
+.p-main__section--foodImageItem,
+.p-main__section--accessImageItem,
+.p-main__section--newsImageItem {
+  @include pc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @include tb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @include sp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.p-main__section--detail {
+  background-color: $mainSection--detailColor;
+  @include pc {
+    width: 50%;
+    padding: 120px 50px;
+  }
+  @include tb {
+    width: 50%;
+    padding: 100px 40px;
+  }
+  @include sp {
+    width: 100%;
+    padding: 20px 10px;
+  }
+}
+
+.p-main__section--detailEven {
+  background-color: $mainSection--detailEvenColor;
+  @include pc {
+    width: 50%;
+    padding: 120px 50px;
+  }
+  @include tb {
+    width: 50%;
+    padding: 100px 40px;
+  }
+  @include sp {
+    width: 100%;
+    padding: 20px 10px;
+  }
+}
+
+.p-main__section--detailTitle {
+  font-family: tbcinergothic-std, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: $mainSection--textColor;
+  text-align: center;
+  @include pc {
+    font-size: 50px;
+  }
+  @include tb {
+    font-size: 40px;
+  }
+  @include sp {
+    font-size: 26px;
+  }
+}
+
+.p-main__section--detailText {
+  font-family: tbcinergothic-std, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: $mainSection--textColor;
+  text-align: center;
+  span {
+    display: inline-block;
+  }
+  @include pc {
+    font-size: 20px;
+    margin-top: 40px;
+    line-height: 280%;
+  }
+  @include tb {
+    font-size: 15px;
+    margin-top: 25px;
+    line-height: 280%;
+  }
+  @include sp {
+    font-size: 13px;
+    margin-top: 10px;
+    line-height: 180%;
+  }
+}
+
+.p-main__moreButtonSection {
+  display: flex;
+  justify-content: flex-end;
+  @include pc {
+    margin-top: 80px;
+  }
+  @include tb {
+    margin-top: 40px;
+  }
+  @include sp {
+    margin-top: 20px;
+  }
+}
+
+.p-main__moreButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $moreButton--backgroundColor;
+  border-radius: 15px;
+  box-shadow: 0 3px 5px $moreButton--boxshadowColor;
+  @include pc {
+    width: 120px;
+    padding: 10px;
+  }
+  @include tb {
+    width: 85px;
+    padding: 7px;
+  }
+  @include sp {
+    width: 75px;
+    padding: 5px;
+  }
+}
+
+.p-mainAccess__moreButtonSection {
+  @include pc {
+    display: none;
+  }
+  @include tb {
+    display: none;
+  }
+  @include sp {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.p-main__moreButton__text {
+  font-family: tbcinergothic-std, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: $moreButton--textColor;
+  @include pc {
+    font-size: 20px;
+  }
+  @include tb {
+    font-size: 15px;
+  }
+  @include sp {
+    font-size: 15px;
+  }
+}
+
+.p-main__moreButton__arrow {
+  left: 3px;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  @include pc {
+    margin-left: 15px;
+    width: 11px;
+    height: 11px;
+  }
+  @include tb {
+    margin-left: 10px;
+    width: 7px;
+    height: 7px;
+  }
+  @include sp {
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+  }
+}
+
+.p-main__accessSection--cafeName {
+  font-family: tbcinergothic-std, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: $mainSection--textColor;
+  @include pc {
+    font-size: 30px;
+    padding-left: 40px;
+    margin-top: 30px;
+  }
+  @include tb {
+    font-size: 20px;
+    padding-left: 40px;
+    margin-top: 30px;
+  }
+  @include sp {
+    font-size: 19px;
+    padding-left: 5px;
+    margin-top: 13px;
+  }
+}
+
+.p-main__section--accessText {
+  margin-top: 15px;
+  font-family: tbcinergothic-std, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: $mainSection--textColor;
+  padding-left: 50px;
+  span {
+    display: inline-block;
+  }
+  @include pc {
+    font-size: 20px;
+    line-height: 200%;
+  }
+  @include tb {
+    font-size: 15px;
+    line-height: 200%;
+  }
+  @include sp {
+    font-size: 13px;
+    line-height: 135%;
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+}
+
+.p-main__access--iconSection {
+  width: 100%;
+  margin-top: 15px;
+  margin-left: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.p-main__access--instagramIcon {
+  @include pc {
+    width: 32px;
+    height: 32px;
+  }
+  @include tb {
+    width: 28px;
+    height: 28px;
+  }
+  @include sp {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.p-main__access--facebookIcon {
+  @include pc {
+    width: 35px;
+    height: 35px;
+    margin-left: 30px;
+  }
+  @include tb {
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+  }
+  @include sp {
+    width: 18px;
+    height: 18px;
+    margin-left: 12px;
+  }
+}
+
+.p-mainSection__newsDetail {
+  padding-left: 30px;
+  @include pc {
+    margin-top: 70px;
+  }
+  @include tb {
+    margin-top: 35px;
+  }
+  @include sp {
+    margin-top: 20px;
+    padding-left: 0px;
+  }
+}
+
+.p-mainSection__newsDetail--section {
+  @include pc {
+    margin-bottom: 40px;
+  }
+  @include tb {
+    margin-bottom: 25px;
+  }
+  @include sp {
+    margin-bottom: 5px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.p-mainSection__newsDetail--date {
+  color: $mainSection--textColor;
+  @include pc {
+    font-size: 20px;
+  }
+  @include tb {
+    font-size: 18px;
+  }
+  @include sp {
+    font-size: 13px;
+  }
+}
+
+.p-mainSection__newsDetail--title {
+  margin-bottom: 20px;
+  color: $mainSection--textColor;
+  font-family: tbcinergothic-std, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  @include pc {
+    font-size: 20px;
+  }
+  @include tb {
+    font-size: 20px;
+  }
+  @include sp {
+    font-size: 15px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.p-main__access--googlemapSection {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  @include sp {
+    margin-top: 25px;
+  }
+}
+
+.p-main__access--googleMap {
+  @include pc {
+    width: 500px;
+    height: 400px;
+  }
+  @include tb {
+    width: 310px;
+    height: 400px;
+  }
+  @include sp {
+    display: none;
+  }
+}
